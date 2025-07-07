@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toko Seblak Pedas</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <header>
+    <h1>Seblak Pedas</h1>
+    <button onclick="toggleCart()">🛒 Keranjang (<span id="cart-count">0</span>)</button>
+  </header>
+
+  <main>
+    <!-- Produk Seblak Original -->
+    <div class="product">
+      <img src="images/levelseblak1.jpeg" alt="Seblak Original" />
+      <h2>Seblak Original</h2>
+      <p>Harga: Rp 15.000</p>
+
+      <label>Level Pedas:
+        <select id="level-seblak1">
+          <option value="1">Level 1</option>
+          <option value="3">Level 3</option>
+          <option value="5">Level 5</option>
+          <option value="10">Level 10</option>
+        </select>
+      </label>
+
+      <label>Topping:
+        <select id="topping-seblak1">
+          <option value="Telur">Telur</option>
+          <option value="Ceker">Ceker</option>
+          <option value="Sosis">Sosis</option>
+          <option value="Bakso">Bakso</option>
+        </select>
+      </label>
+
+      <button onclick="addToCart('Seblak Original', 15000, 'level-seblak1', 'topping-seblak1')">Tambah</button>
+    </div>
+
+    <!-- Produk Seblak Ceker -->
+    <div class="product">
+      <img src="images/levelseblak2.jpeg" alt="Seblak Ceker" />
+      <h2>Seblak Ceker</h2>
+      <p>Harga: Rp 18.000</p>
+
+      <label>Level Pedas:
+        <select id="level-seblak2">
+          <option value="1">Level 1</option>
+          <option value="3">Level 3</option>
+          <option value="5">Level 5</option>
+          <option value="10">Level 10</option>
+        </select>
+      </label>
+
+      <label>Topping:
+        <select id="topping-seblak2">
+          <option value="Telur">Telur</option>
+          <option value="Ceker">Ceker</option>
+          <option value="Sosis">Sosis</option>
+          <option value="Bakso">Bakso</option>
+        </select>
+      </label>
+
+      <button onclick="addToCart('Seblak Ceker', 18000, 'level-seblak2', 'topping-seblak2')">Tambah</button>
+    </div>
+  </main>
+
+  <!-- Keranjang Belanja -->
+  <section id="cart" class="hidden">
+    <h2>Keranjang Belanja</h2>
+    <ul id="cart-items"></ul>
+    <p>Total: Rp <span id="total">0</span></p>
+    <button onclick="checkout()">Cetak Struk</button>
+  </section>
+
+  <!-- Struk Pembelian -->
+  <section id="receipt" class="hidden">
+    <h2>Struk Pembelian</h2>
+    <pre id="receipt-content"></pre>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
